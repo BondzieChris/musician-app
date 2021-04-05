@@ -9,12 +9,7 @@ pipeline{
                     bat 'npm -v'
                 }
             }
-
-        }
-    }
-    stages{
-        stage("Maven/Java Stage"){
-             steps{
+            steps{
                withMaven {
                  bat 'mvn -v'
                  bat 'java -version'
