@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("Build Stage"){
             steps{
-               nodejs(nodeJSInstallationName: 'NodeJS.12', configId: '<config-file-provider-id>') {
+               nodejs(nodeJSInstallationName: 'NodeJS.12') {
                     sh 'node -v'
                     sh 'npm -v'
                 }
