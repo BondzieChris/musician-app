@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage("Build Stage"){
+        stage("Node Stage"){
             steps{
                nodejs('NodeJS.12') {
                    bat 'yarn -v'
@@ -9,6 +9,11 @@ pipeline{
                     bat 'npm -v'
                 }
             }
+
+        }
+    }
+    stages{
+        stage("Maven/Java Stage"){
              steps{
                withMaven {
                  bat 'mvn -v'
