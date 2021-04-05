@@ -9,6 +9,12 @@ pipeline{
                     bat 'npm -v'
                 }
             }
+             steps{
+               withMaven {
+                 bat 'mvn -v'
+                 bat 'java -version'
+                }
+            }
 
         }
     }
