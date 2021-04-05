@@ -1,33 +1,15 @@
 pipeline{
-   agent any
+    agent any
     stages{
-        stage("A"){
+        stage("Build Stage"){
             steps{
-                echo "========executing A========"
-            }
-            
-            post{
-                always{
-                    echo "========always========"
-                }
-                success{
-                    echo "========A executed successfully========"
-                }
-                failure{
-                    echo "========A execution failed========"
+               nodejs(nodeJSInstallationName: 'NodeJS.12', configId: '<config-file-provider-id>') {
+                    sh 'node -v'
+                    sh 'npm -v'
                 }
             }
+
         }
     }
-    post{
-        always{
-            echo "========always========"
-        }
-        success{
-            echo "========pipeline executed successfully ========"
-        }
-        failure{
-            echo "========pipeline execution failed========"
-        }
-    }
+
 }
