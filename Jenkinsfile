@@ -4,9 +4,9 @@ pipeline{
         stage("Build Stage"){
             steps{
                nodejs('NodeJS.12') {
-                   sh 'yarn -v'
-                    sh 'node -v'
-                    sh 'npm -v'
+                   bat 'yarn -v'
+                    bat 'node -v'
+                    bat 'npm -v'
                 }
             }
 
